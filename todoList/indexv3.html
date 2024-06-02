@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ToDo DoDev</title>
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+  <div class="todo-container">
+    <header>
+      <h1>Listas de Tarefas</h1>
+    </header>
+    <form id="todo-form">
+      <p>Adicionar tarefa:</p>
+      <div class="form-control">
+        <input type="text" id="todo-input" placeholder="Digite a sua tarefa" />
+        <select id="todo-priority">
+          <option value="Muito Baixa">Muito Baixa</option>
+          <option value="Baixa">Baixa</option>
+          <option value="Média">Média</option>
+          <option value="Alta">Alta</option>
+          <option value="Muito Alta">Muito Alta</option>
+        </select>
+        <button type="submit">
+          <i class="fa-thin fa-plus"></i>
+        </button>
+      </div>
+    </form>
+    <!-- Edit form -->
+    <form id="edit-form" class="hide">
+      <p>Editar tarefa:</p>
+      <div class="form-control">
+        <input type="text" id="edit-input" placeholder="Edite a sua tarefa" />
+        <select id="edit-priority">
+          <option value="Muito Baixa">Muito Baixa</option>
+          <option value="Baixa">Baixa</option>
+          <option value="Média">Média</option>
+          <option value="Alta">Alta</option>
+          <option value="Muito Alta">Muito Alta</option>
+        </select>
+        <button type="submit">
+          <i class="fa-solid fa-check-double"></i>
+        </button>
+        <button id="cancel-edit-btn">
+          <i class="fa-solid fa-delete-left"></i>
+        </button>
+      </div>
+    </form>
+    <!-- Toolbar for filtering and searching -->
+    <section id="toolbar">
+      <div id="search">
+        <h4>Pesquisar:</h4>
+        <form>
+          <input type="text" id="search-input" placeholder="Procurar tarefas" />
+          <button type="button" id="erase-button">
+            <i class="fa-solid fa-delete-left"></i>
+          </button>
+        </form>
+      </div>
+      <div id="filter">
+        <h4>Filtrar por:</h4>
+        <select id="filter-select">
+          <option value="default">Selecione...</option>
+          <option value="alfabetica-cresc">Ordem Alfabética (Cresc.)</option>
+          <option value="alfabetica-decresc">Ordem Alfabética (Decresc.)</option>
+          <option value="prioridade-cresc">Prioridade (Cresc.)</option>
+          <option value="prioridade-decresc">Prioridade (Decresc.)</option>
+        </select>
+      </div>
+    </section>
+    <!-- Todo list -->
+    <div id="todo-list"></div>
+    <!-- Button container -->
+    <div class="button-container">
+      <button id="clear-tasks-button">Limpar Tarefas</button>
+      <button id="export-button">Exportar Tarefas</button>
+    </div>
+  </div>
+  <script src="js/scriptsv3.js"></script>
+</body>
+</html>
